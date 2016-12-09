@@ -4,7 +4,7 @@ web开发前后端分离，前端ajax访问API接口，需统一对返回的结�
 
 ### 使用场景
 
-> js访问api接口，当access_token过期时，所有接口都会返回一个统一的错误码，这时js需要清空用户本地信息并跳转至登录页。
+> javascript访问api接口，当access_token过期时，所有接口都会返回一个统一的错误码，这时javascript需要清空用户本地信息并跳转至登录页。
 
 
 ### 说明文档
@@ -39,21 +39,21 @@ $[method].commonControl = function(json, success) {
 ```
 
 #### 访问接口
-然后就可以像使用jQuery一样使用ajax，只需增加 ==$.api.== 即可
+然后就可以像使用jQuery一样使用ajax，只需增加 $.api. 即可
 
 ```javascript
 // ajax
 $.api.ajax({
-	type:"get",
-	url:'http://www.example.com/api/v1/Account/token?mobile=***&password=***',
-	dataType:"jsonp",
-	jsonp:"callbak",
-	success:function(json){
-		console.log(json);
-	}
+    type:"get",
+    url:'http://www.example.com/api/v1/Account/token?mobile=***&password=***',
+    dataType:"jsonp",
+    jsonp:"callbak",
+    success:function(json){
+        console.log(json);
+    }
 });
 // getJSON
 $.api.getJSON("http://www.example.com/api/v1/Account/token?callbak=?", {mobile:"***",password:"***"}, function(json){
-	console.log(json);
+    console.log(json);
 });
 ```
