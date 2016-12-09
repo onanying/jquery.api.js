@@ -1,0 +1,26 @@
+<html>
+<head></head>
+<body>
+
+	<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<script src="jquery.api.js"></script>
+	<script type="text/javascript">
+
+		$.api.ajax({
+			type:"get",
+			url:'http://www.example.com/api/v1/Account/token?mobile=***&password=***',
+			dataType:"jsonp",
+			jsonp:"callbak",
+			success:function(json){
+				console.log(json);
+			}
+		});
+
+		$.api.getJSON("http://www.example.com/api/v1/Account/token?callbak=?", {mobile:"***",password:"***"}, function(json){
+			console.log(json);
+		});
+
+	</script>
+
+</body>
+</html>
